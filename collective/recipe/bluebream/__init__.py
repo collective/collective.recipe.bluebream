@@ -13,7 +13,7 @@ import logging, os, pkg_resources
 logger = logging.getLogger('collective.recipe.bluebream')
 
 def mkdir(dir):
-    if not os.exists(dir):
+    if not os.path.exists(dir):
         os.mkdir(dir)
     else:
         logger.info('%s exists' % dir)
