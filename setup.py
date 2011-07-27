@@ -50,5 +50,8 @@ setup(
         'zope.intid',
         'zope.contentprovider',
         'zope.app.zcmlfiles',
-    ]
+    ],
+    entry_points={
+        'zc.buildout': 'default = collective.recipe.bluebream:Recipe',
+    }
 )
