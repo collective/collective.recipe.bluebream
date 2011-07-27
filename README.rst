@@ -35,12 +35,115 @@ By now you should have a ``bin/paster`` script. To run ``bluebream``, you will a
 bluebream.ini
 -------------
 
-XXX Finish me
+Cut/paste, save as bluebream.ini::
+
+    [loggers]
+    keys = root, wsgi
+
+    [handlers]
+    keys = console, accesslog
+
+    [formatters]
+    keys = generic, accesslog
+
+    [formatter_generic]
+    format = %(asctime)s %(levelname)s [%(name)s] %(message)s
+
+    [formatter_accesslog]
+    format = %(message)s
+
+    [handler_console]
+    class = StreamHandler
+    args = (sys.stderr,)
+    level = ERROR
+    formatter = generic
+
+    [handler_accesslog]
+    class = FileHandler
+    args = ('access.log', 'a')
+    level = INFO
+    formatter = accesslog
+
+    [logger_root]
+    level = INFO
+    handlers = console
+
+    [logger_wsgi]
+    level = INFO
+    handlers = accesslog
+    qualname = wsgi
+    propagate = 0
+
+    [filter:translogger]
+    use = egg:Paste#translogger
+    setup_console_handler = False
+    logger_name = wsgi
+
+    [filter-app:main]
+    # Change the last part from 'ajax' to 'pdb' for a post-mortem debugger
+    # on the console:
+    use = egg:z3c.evalexception#ajax
+    next = zope
+
+    [app:zope]
+    use = egg:collective.recipe.bluebream
+    filter-with = translogger
+
+    [server:main]
+    use = egg:Paste#http
+    host = 127.0.0.1
+    port = 8080
+
+    [DEFAULT]
+    # set the name of the zope.conf file
+    zope_conf = %(here)s/zope.conf
 
 zope.conf
 ---------
 
-XXX Finish me
+Cut/paste, save as zope.conf::
+
+    # main zope configuration file for debug mode
+
+    # Identify the component configuration used to define the site:
+    site-definition bluebream.zcml
+
+    <zodb>
+
+      <filestorage>
+        path var/filestorage/Data.fs
+        blob-dir var/blobstorage
+      </filestorage>
+
+    # Uncomment this if you want to connect to a ZEO server instead:
+    #  <zeoclient>
+    #    server localhost:8100
+    #    storage 1
+    #    # ZEO client cache, in bytes
+    #    cache-size 20MB
+    #    # Uncomment to have a persistent disk cache
+    #    #client zeo1
+    #  </zeoclient>
+    </zodb>
+
+    <eventlog>
+      # This sets up logging to both a file and to standard output (STDOUT).
+      # The "path" setting can be a relative or absolute filesystem path or
+      # the tokens STDOUT or STDERR.
+
+      <logfile>
+        path z3.log
+        formatter zope.exceptions.log.Formatter
+      </logfile>
+
+      <logfile>
+        path STDOUT
+        formatter zope.exceptions.log.Formatter
+      </logfile>
+    </eventlog>
+
+    #developer mode
+    devmode on
 
 Execution
 =========
