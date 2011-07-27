@@ -54,4 +54,7 @@ setup(
     entry_points={
         'zc.buildout': 'default = collective.recipe.bluebream:Recipe',
     }
+    author='Alex Clark',
+    author_email='aclark@aclark.net',
+    license='ZPL',
 )
