@@ -51,6 +51,9 @@ Now you can run paster::
 
     $ bin/paster serve bluebream.ini
 
-And load ``http://localhost:8080`` in your browser.
+And open ``http://localhost:8080`` in your browser.
 
-That's it!
+Completion
+==========
+
+That's it! Checkout http://bluebream.zope.org for more information about Bluebream.
