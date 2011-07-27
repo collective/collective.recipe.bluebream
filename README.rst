@@ -30,9 +30,7 @@ Then run buildout::
 Configuration
 =============
 
-By now you should have a ``bin/paster`` script. To run ``bluebream``, you will also need a WSGI configuration file and a Zope configuration file.
-
-Here are some sample configuration files to get you started.
+By now you should have a ``bin/paster`` script. To run ``bluebream``, you will also need a WSGI configuration file and a Zope configuration file. Here are some sample configuration files to get you started.
 
 bluebream.ini
 -------------
@@ -60,5 +58,5 @@ That's it! Checkout http://bluebream.zope.org for more information about Bluebre
 
 .. _`Bluebream`: http://bluebream.zope.org
 
-[1] Actually, it installs ``bin/paster``.
+[1] Actually, it installs ``bin/paster``. And a small WSGI application. And some ZCML configuration files. ;-)
 

@@ -53,6 +53,7 @@ setup(
         'zope.app.zcmlfiles',
     ],
     entry_points={
+        'paste.app_factory': 'main = collective.recipe.bluebream:application_factory',
         'zc.buildout': 'default = collective.recipe.bluebream:Recipe',
     },
     author='Alex Clark',
