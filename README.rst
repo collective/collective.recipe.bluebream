@@ -31,7 +31,7 @@ Then run buildout::
 Develop eggs
 ------------
 
-As of 0.3.0, ``collective.recipe.bluebream`` supports package development via the ``eggs`` parameter::
+As of version **0.3.0**, ``collective.recipe.bluebream`` supports package development via the ``eggs`` parameter::
 
     [buildout]
     develop =
