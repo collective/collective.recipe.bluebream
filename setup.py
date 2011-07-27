@@ -64,4 +64,5 @@ setup(
     author='Alex Clark',
     author_email='aclark@aclark.net',
     license='ZPL',
+    url='https://github.com/collective/collective.recipe.bluebream',
 )

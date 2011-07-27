@@ -2,6 +2,12 @@
 Changelog
 =========
 
+0.3.0 - (Unreleased)
+--------------------
+
+* Add meta info to setup.py
+  [aclark]
+
 0.2.0 - (2011-07-27)
 --------------------
 
