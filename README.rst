@@ -19,6 +19,7 @@ Then edit buildout.cfg; use ``collective.recipe.bluebream`` like any recipe: jus
     extends = http://download.zope.org/bluebream/bluebream-1.0.cfg
     parts =
         bluebream
+    versions = versions
 
     [bluebream]
     recipe = collective.recipe.bluebream
