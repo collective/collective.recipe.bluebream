@@ -2,10 +2,10 @@
 Changelog
 =========
 
-0.3.0 - (Unreleased)
+0.3.0 - (2011-07-27)
 --------------------
 
-* Add `eggs` parameter to recipe to facilitate project dev
+* Support `eggs` parameter for develop eggs, etc.
   [aclark]
 
 * Add logger
