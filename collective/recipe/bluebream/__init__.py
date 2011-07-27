@@ -16,7 +16,7 @@ def mkdir(dir):
     if not os.path.exists(dir):
         os.mkdir(dir)
     else:
-        logger.info('%s exists' % dir)
+        logger.debug('%s exists' % dir)
 
 class Recipe(object):
     
