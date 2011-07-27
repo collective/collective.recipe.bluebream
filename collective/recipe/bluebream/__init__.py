@@ -13,7 +13,11 @@ class Recipe(object):
 
     def install(self):
         # Generate a paster script
-        return scripts(['PasteScript'], pkg_resources.working_set, None, self.buildout['buildout']['bin-directory'])
+        import pdb; pdb.set_trace()
+        
+        return scripts(['PasteScript'], pkg_resources.working_set,
+            self.buildout['buildout']['executable'],
+            self.buildout['buildout']['bin-directory'])
 
     def update(self):
         pass
