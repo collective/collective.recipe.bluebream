@@ -12,9 +12,7 @@ class Recipe(object):
         self.buildout = buildout
 
     def install(self):
-        # Generate a paster script
-        import pdb; pdb.set_trace()
-        
+        # Generate paster script
         return scripts(['PasteScript'], pkg_resources.working_set,
             self.buildout['buildout']['executable'],
             self.buildout['buildout']['bin-directory'])
