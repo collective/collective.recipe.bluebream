@@ -24,4 +24,6 @@
      name="index"
      />
 
+  <include package=".welcome" />
+
 </configure>
