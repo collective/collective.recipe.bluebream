@@ -6,9 +6,12 @@ setup(
     namespace_packages=[
         'collective',
         'collective.recipe',
-    ]
+    ],
     install_requires=[
         'setuptools',
+        'Paste',
+        'PasteDeploy',
+        'PasteScript',
         'zope.securitypolicy',
         'zope.component',
         'zope.annotation',
@@ -47,4 +50,5 @@ setup(
         'zope.intid',
         'zope.contentprovider',
         'zope.app.zcmlfiles',
+    ]
 )
