@@ -5,6 +5,9 @@ Changelog
 0.2.0 - (2011-07-27)
 --------------------
 
+* Create var dirs if they do not exist
+  [aclark]
+
 * Include package data
   [aclark]
 

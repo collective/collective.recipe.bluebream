@@ -8,6 +8,15 @@
 
 from zc.buildout.easy_install import scripts
 import os, pkg_resources
+import logging
+
+logger = logging.getLogger('collective.recipe.bluebream')
+
+def mkdir(dir):
+    try:
+        os.mkdir(dir)
+    except:
+        print '%s exists' % dir
 
 class Recipe(object):
     
@@ -15,25 +24,20 @@ class Recipe(object):
         self.buildout = buildout
 
     def install(self):
+
+        # Create var dirs
+        var = os.path.join(self.buildout['buildout']['directory'], 'var')
+        fs = os.path.join(self.buildout['buildout']['directory'], 'var', 'filestorage')
+        bs = os.path.join(self.buildout['buildout']['directory'], 'var', 'blobstorage')
+        mkdir(var)
+        mkdir(fs)
+        mkdir(bs)
+
         # Generate paster script
         return scripts(['PasteScript'], pkg_resources.working_set,
             self.buildout['buildout']['executable'],
             self.buildout['buildout']['bin-directory'])
 
-        # Create var dirs
-        import pdb; pdb.set_trace()
-        
-        try:
-            fs = os.path.join(self.buildout['buildout']['directory'], 'var', 'filestorage')
-            os.mkdir(fs)
-        except:
-            print '% exists' % fs
-
-        try:
-            bs = os.path.join(self.buildout['buildout']['directory'], 'var', 'blobstorage')
-            os.mkdir(bs)
-        except:
-            print '% exists' % bs
 
     def update(self):
         pass
