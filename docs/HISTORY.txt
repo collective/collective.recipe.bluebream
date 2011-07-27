@@ -5,6 +5,12 @@ Changelog
 0.3.0 - (Unreleased)
 --------------------
 
+* Add `eggs` parameter to recipe to facilitate project dev
+  [aclark]
+
+* Add logger
+  [aclark]
+
 * Add meta info to setup.py
   [aclark]
 

@@ -7,8 +7,8 @@
 # [4] And it creates ``var/{filestorage, blobstorage}`` if they do not exist
 
 from zc.buildout.easy_install import scripts
-import os, pkg_resources
-import logging
+from zc.recipe.egg import Egg
+import logging, os, pkg_resources
 
 logger = logging.getLogger('collective.recipe.bluebream')
 
@@ -16,12 +16,17 @@ def mkdir(dir):
     try:
         os.mkdir(dir)
     except:
-        print '%s exists' % dir
+        logger.info('%s exists' % dir)
 
 class Recipe(object):
     
     def __init__(self, buildout, name, options):
+
+        # Rip off p.r.zope2instance's Egg magic to support ``eggs`` parameter
+        # for develop eggs, etc.
+        self.egg = Egg(buildout, options['recipe'], options)
         self.buildout = buildout
+        self.options = options
 
     def install(self):
 
@@ -34,10 +39,10 @@ class Recipe(object):
         mkdir(bs)
 
         # Generate paster script
-        return scripts(['PasteScript'], pkg_resources.working_set,
+        requirements, ws = self.egg.working_set(['collective.recipe.bluebream'])
+        return scripts(['PasteScript'], ws,
             self.buildout['buildout']['executable'],
             self.buildout['buildout']['bin-directory'])
-
 
     def update(self):
         pass

@@ -18,6 +18,7 @@ setup(
         'Paste',
         'PasteDeploy',
         'PasteScript',
+        'zc.recipe.egg',
         'zope.securitypolicy',
         'zope.component',
         'zope.annotation',
