@@ -5,7 +5,7 @@ Changelog
 0.3.0 - (2011-07-27)
 --------------------
 
-* Support `eggs` parameter for develop eggs, etc.
+* Support ``eggs`` parameter for develop eggs, etc.
   [aclark]
 
 * Add logger
