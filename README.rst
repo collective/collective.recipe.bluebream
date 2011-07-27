@@ -162,5 +162,5 @@ That's it! Checkout http://bluebream.zope.org for more information about Bluebre
 
 .. _`Bluebream`: http://bluebream.zope.org
 
-[1] Actually, it installs ``bin/paster``. And a small WSGI application. And some ZCML configuration files. And some var directories if they do not exist. And it supports develop eggs. ;-)
+[1] Actually, it installs ``bin/paster``. And a small WSGI application. And some ZCML configuration files. And it adds some var directories if they do not exist. And it supports develop eggs. ;-)
 
