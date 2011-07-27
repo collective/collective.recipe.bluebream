@@ -2,7 +2,7 @@
 Introduction
 ============
 
-``collective.recipe.bluebream`` is a simple ``zc.buildout`` recipe you can use to bootstrap a Bluebream project. In fact, it is so simple that it contains no recipe functionality at all. It simply requires the packages that Bluebream 1.0 requires (based on the sample project setup described here: http://bluebream.zope.org/doc/1.0/gettingstarted.html). It may do more in the future, though.
+``collective.recipe.bluebream`` is a simple ``zc.buildout`` recipe you can use to bootstrap a `Bluebream`_ project. In fact, it is so simple that it contains no recipe functionality at all. It simply requires the packages that Bluebream 1.0 requires (based on the sample project setup described here: http://bluebream.zope.org/doc/1.0/gettingstarted.html). It may do more in the future, though.
 
 
 Installation
@@ -57,3 +57,5 @@ Completion
 ==========
 
 That's it! Checkout http://bluebream.zope.org for more information about Bluebream.
+
+.. _`Bluebream`: http://bluebream.zope.org
