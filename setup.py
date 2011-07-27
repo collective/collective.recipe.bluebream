@@ -1,9 +1,11 @@
 from setuptools import setup, find_packages
 
+import os
+
 setup(
     name='collective.recipe.bluebream',
     description='zc.buildout recipe to install bluebream',
-    long_description=open('README.rst').read(),
+    long_description=open('README.rst').read() + open(os.path.join('docs', 'HISTORY.txt')).read(),
     version='0.2.0',
     packages=find_packages(),
     include_package_data=True,
