@@ -28,6 +28,19 @@ Then run buildout::
 
     $ bin/buildout
 
+Develop eggs
+------------
+
+As of 0.3.0, ``collective.recipe.bluebream`` supports package development via the ``eggs`` parameter::
+
+    [buildout]
+    develop =
+        src/my.package
+    …
+    [bluebream]
+    eggs =
+        my.package
+
 Configuration
 =============
 
