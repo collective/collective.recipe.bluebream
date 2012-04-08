@@ -3,16 +3,14 @@ from setuptools import setup, find_packages
 import os
 
 setup(
-    name='collective.recipe.bluebream',
+    author='Alex Clark',
+    author_email='aclark@aclark.net',
     description='zc.buildout recipe to install bluebream',
-    long_description=open('README.rst').read() + open(os.path.join('docs', 'HISTORY.txt')).read(),
-    version='0.3.0',
-    packages=find_packages(),
+    entry_points={
+        'paste.app_factory': 'main = collective.recipe.bluebream:application_factory',
+        'zc.buildout': 'default = collective.recipe.bluebream:Recipe',
+    },
     include_package_data=True,
-    namespace_packages=[
-        'collective',
-        'collective.recipe',
-    ],
     install_requires=[
         'setuptools',
         'Paste',
@@ -58,12 +56,17 @@ setup(
         'zope.contentprovider',
         'zope.app.zcmlfiles',
     ],
-    entry_points={
-        'paste.app_factory': 'main = collective.recipe.bluebream:application_factory',
-        'zc.buildout': 'default = collective.recipe.bluebream:Recipe',
-    },
-    author='Alex Clark',
-    author_email='aclark@aclark.net',
     license='ZPL',
+    long_description=(
+        open('README.rst').read() +
+        open(os.path.join('docs', 'HISTORY.txt')).read()
+    ),
+    name='collective.recipe.bluebream',
+    namespace_packages=[
+        'collective',
+        'collective.recipe',
+    ],
+    packages=find_packages(),
     url='https://github.com/collective/collective.recipe.bluebream',
+    version='0.3.0',
 )
