@@ -16,7 +16,8 @@ Installation
 
 Create a buildout::
 
-    $ bin/easy_install zc.buildout
+    $ virtualenv-2.7 .
+    $ bin/pip install zc.buildout
     $ bin/buildout init
 
 Then edit buildout.cfg; use ``collective.recipe.bluebream`` like any recipe: just add a part and configure the ``recipe`` parameter. You should also configure a known good set of packages via the extends parameter::
