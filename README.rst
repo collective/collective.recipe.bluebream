@@ -43,7 +43,7 @@ As of version **0.3.0**, ``collective.recipe.bluebream`` supports package develo
     [buildout]
     develop =
         src/my.package
-    …
+
     [bluebream]
     eggs =
         my.package
