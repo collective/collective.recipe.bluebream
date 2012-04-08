@@ -2,8 +2,6 @@ from setuptools import find_packages
 from setuptools import setup
 import os
 
-VERSION = '0.4.0'
-
 
 setup(
     author='Alex Clark',
@@ -72,5 +70,5 @@ setup(
     ],
     packages=find_packages(),
     url='https://github.com/collective/collective.recipe.bluebream',
-    version=VERSION,
+    version='0.4.0',
 )
