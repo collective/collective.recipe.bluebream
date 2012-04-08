@@ -6,7 +6,6 @@ import os
 setup(
     author='Alex Clark',
     author_email='aclark@aclark.net',
-    description='zc.buildout recipe to install bluebream',
     entry_points={
         'paste.app_factory':
             'main = collective.recipe.bluebream:application_factory',
