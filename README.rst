@@ -2,8 +2,14 @@
 Introduction
 ============
 
-``collective.recipe.bluebream`` is a simple ``zc.buildout`` recipe you can use to bootstrap a `Bluebream`_ project. In fact, it is so simple that it contains almost no recipe functionality at all[1]. It simply requires the packages that Bluebream 1.0 requires, according to the sample project setup described here: http://bluebream.zope.org/doc/1.0/gettingstarted.html). It may do more in the future, though.
+``collective.recipe.bluebream`` is a ``zc.buildout`` recipe you can use to bootstrap a `Bluebream`_ project. It does the following:
 
+- Requires the packages required by BlueBream (according to the sample project setup described here: http://bluebream.zope.org/doc/1.0/gettingstarted.html)
+- Installs ``bin/paster``
+- Installs a small WSGI application
+- Installs ZCML configuration files
+- Adds some var directories if they do not exist
+- Supports develop eggs
 
 Installation
 ============
@@ -44,7 +50,7 @@ As of version **0.3.0**, ``collective.recipe.bluebream`` supports package develo
 Configuration
 =============
 
-By now you should have a ``bin/paster`` script. To run ``bluebream``, you will also need a WSGI configuration file and a Zope configuration file. Here are some sample configuration files to get you started.
+You should now have a ``bin/paster`` script. To run ``bluebream``, you will also need a WSGI configuration file and a Zope configuration file. Here are some sample configuration files to get you started.
 
 bluebream.ini
 -------------
@@ -174,6 +180,4 @@ Completion
 That's it! Checkout http://bluebream.zope.org for more information about Bluebream.
 
 .. _`Bluebream`: http://bluebream.zope.org
-
-[1] Actually, it installs ``bin/paster``. And a small WSGI application. And some ZCML configuration files. And it adds some var directories if they do not exist. And it supports develop eggs. ;-)
 

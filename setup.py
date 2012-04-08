@@ -7,7 +7,8 @@ setup(
     author_email='aclark@aclark.net',
     description='zc.buildout recipe to install bluebream',
     entry_points={
-        'paste.app_factory': 'main = collective.recipe.bluebream:application_factory',
+        'paste.app_factory':
+            'main = collective.recipe.bluebream:application_factory',
         'zc.buildout': 'default = collective.recipe.bluebream:Recipe',
     },
     include_package_data=True,
