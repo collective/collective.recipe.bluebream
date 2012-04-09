@@ -6,6 +6,8 @@ import os
 setup(
     author='Alex Clark',
     author_email='aclark@aclark.net',
+    description='collective.recipe.bluebream is a zc.buildout recipe \
+        you can use to bootstrap a Bluebream project',
     entry_points={
         'paste.app_factory':
             'main = collective.recipe.bluebream:application_factory',
